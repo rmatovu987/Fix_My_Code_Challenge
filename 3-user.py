@@ -85,19 +85,19 @@ if __name__ == '__main__':
         print("User.password should be None if setter to an integer")
 
     if not user_1.is_valid_password(u_pwd):
-        print("is_valid_password should return True if it's the right \
+        raise ValueError("User.is_valid_password should return True if it's the right \
 password")
 
     if user_1.is_valid_password("Fakepwd"):
-        print("is_valid_password should return False if it's not the right \
+        raise ValueError("is_valid_password should return False if it's not the right \
 password")
 
     if user_1.is_valid_password(None):
-        print("is_valid_password should return False if compare with None")
+        raise ValueError("is_valid_password should return False if compare with None")
 
     if user_1.is_valid_password(89):
-        print("is_valid_password should return False if compare with integer")
+        raise TypeError("is_valid_password should return False if compare with integer")
 
     if user_2.is_valid_password("No pwd"):
-        print("is_valid_password should return False if no password set \
+        raise ValueError("is_valid_password should return False if no password set \
 before")
